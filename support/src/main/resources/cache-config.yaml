@@ -1,0 +1,3 @@
+sys_config_biz:
+    ttl: 1800000
+    maxIdleTime: 900000

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yongda.lc</groupId>
+    <artifactId>yongda-lc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>system</module>
+        <module>biz</module>
+        <module>dal</module>
+        <module>support</module>
+        <module>thirdparty</module>
+    </modules>
+
+    <!-- 定义属性 -->
+    <properties>
+        <swagger.version>2.8.0</swagger.version>
+        <spring.boot.version>1.5.10.RELEASE</spring.boot.version>
+    </properties>
+
+    <!-- 定义全局Spring boot父版本 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.10.RELEASE</version>
+    </parent>
+
+    <!-- 依赖管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- \\\\\\\\\\\\工程内部jar\\\\\\\\\\\\ -->
+            <dependency>
+                <groupId>com.yongda.lc</groupId>
+                <artifactId>yongda-lc-biz</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yongda.lc</groupId>
+                <artifactId>yongda-lc-dal</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yongda.lc</groupId>
+                <artifactId>yongda-lc-support</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yongda.lc</groupId>
+                <artifactId>yongda-lc-thirdparty</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- \\\\\\\\\\\\工程内部jar\\\\\\\\\\\\ -->
+
+            <!-- \\\\\\\\\\\\spring系列框架\\\\\\\\\\\\ -->
+            <!-- spring通用模块 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <!-- spring-web -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <!-- spring-jdbc -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <version>${spring.boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.tomcat</groupId>
+                        <artifactId>tomcat-jdbc</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- DevTool -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <!-- \\\\\\\\\\\\spring系列框架\\\\\\\\\\\\ -->
+
+            <!-- \\\\\\\\\\\\swagger文档工具\\\\\\\\\\\\ -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!-- \\\\\\\\\\\\swagger文档工具\\\\\\\\\\\\ -->
+
+            <!-- \\\\\\\\\\\\数据访问层相关依赖\\\\\\\\\\\\ -->
+            <!-- oracle驱动 -->
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>11.2.0.3</version>
+            </dependency>
+            <!-- mybatis-spring-boot组件 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>1.3.1</version>
+            </dependency>
+            <!-- 基于mybatis的通用mapper组件 -->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>1.2.4</version>
+            </dependency>
+            <!-- 基于mybaits的分页组件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>1.2.3</version>
+            </dependency>
+            <!-- hikari数据库连接池 -->
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>2.7.8</version>
+            </dependency>
+            <!-- \\\\\\\\\\\\数据访问层相关依赖\\\\\\\\\\\\ -->
+
+            <!-- \\\\\\\\\\\\Redisson\\\\\\\\\\\\ -->
+            <dependency>
+                <groupId>com.github.drtrang</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>1.1.0</version>
+            </dependency>
+            <!-- \\\\\\\\\\\\Redisson\\\\\\\\\\\\ -->
+
+            <!-- \\\\\\\\\\\\模板引擎\\\\\\\\\\\\ -->
+            <dependency>
+                <groupId>com.ibeetl</groupId>
+                <artifactId>beetl-framework-starter</artifactId>
+                <version>1.1.41.RELEASE</version>
+            </dependency>
+            <!-- \\\\\\\\\\\\模板引擎\\\\\\\\\\\\ -->
+
+            <!-- \\\\\\\\\\\\工具类库\\\\\\\\\\\\ -->
+            <!-- 糊涂工具类库（建议使用） -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>4.0.8</version>
+            </dependency>
+            <!-- 谷歌工具类库 -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>24.0-jre</version>
+            </dependency>
+            <!-- 阿帕奇IO工具类库 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.6</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.46</version>
+            </dependency>
+            <!-- \\\\\\\\\\\\工具类库\\\\\\\\\\\\ -->
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 配置maven私服 -->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://192.168.110.31:8081/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://192.168.110.31:8081/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- 编译插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- 源码插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- 资源文件处理插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

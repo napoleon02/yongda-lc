@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>yongda-lc</artifactId>
+        <groupId>com.yongda.lc</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>yongda-lc-support</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- \\\\\\\\\\\\工程内部Jar\\\\\\\\\\\\ -->
+        <dependency>
+            <groupId>com.yongda.lc</groupId>
+            <artifactId>yongda-lc-dal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.yongda.lc</groupId>
+            <artifactId>yongda-lc-thirdparty</artifactId>
+        </dependency>
+        <!-- \\\\\\\\\\\\工程内部Jar\\\\\\\\\\\\ -->
+
+        <!-- \\\\\\\\\\\\spring系列框架\\\\\\\\\\\\ -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- \\\\\\\\\\\\spring系列框架\\\\\\\\\\\\ -->
+
+        <!-- \\\\\\\\\\\\swagger文档\\\\\\\\\\\\ -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <!-- \\\\\\\\\\\\swagger文档\\\\\\\\\\\\ -->
+
+        <!-- \\\\\\\\\\\\Redisson\\\\\\\\\\\\ -->
+        <dependency>
+            <groupId>com.github.drtrang</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- \\\\\\\\\\\\Redisson\\\\\\\\\\\\ -->
+
+        <!-- \\\\\\\\\\\\模板引擎\\\\\\\\\\\\ -->
+        <dependency>
+            <groupId>com.ibeetl</groupId>
+            <artifactId>beetl-framework-starter</artifactId>
+        </dependency>
+        <!-- \\\\\\\\\\\\模板引擎\\\\\\\\\\\\ -->
+
+        <!-- \\\\\\\\\\\\工具系列\\\\\\\\\\\\ -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+        <!-- 谷歌工具类库 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <!-- 阿帕奇IO工具类库 -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <!-- \\\\\\\\\\\\工具系列\\\\\\\\\\\\ -->
+    </dependencies>
+
+</project>

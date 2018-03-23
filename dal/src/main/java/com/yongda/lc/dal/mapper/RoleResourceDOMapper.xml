@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yongda.lc.dal.mapper.RoleResourceDOMapper">
+    <resultMap id="BaseResultMap" type="com.yongda.lc.dal.model.RoleResourceDO">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="ROLE_ID" property="roleId" jdbcType="VARCHAR"/>
+        <result column="RESOURCE_ID" property="resourceId" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="ResourceResultMap" type="com.yongda.lc.dal.model.ResourceDO">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="ID" property="id" jdbcType="VARCHAR"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="CODE" property="code" jdbcType="VARCHAR"/>
+        <result column="TYPE" property="type" jdbcType="VARCHAR"/>
+        <result column="URL" property="url" jdbcType="VARCHAR"/>
+        <result column="PID" property="pid" jdbcType="VARCHAR"/>
+        <result column="IS_DISABLE" property="isDisable" jdbcType="CHAR"/>
+        <result column="MEMO" property="memo" jdbcType="VARCHAR"/>
+        <result column="SORT" property="sort" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <select id="queryResourcesByRoleId" resultMap="ResourceResultMap">
+      SELECT
+          T_RESOURCE_.*
+        FROM
+          T_ROLE_RESOURCE T_ROLE_RESOURCE_
+          LEFT JOIN T_RESOURCE T_RESOURCE_
+          ON T_ROLE_RESOURCE_.RESOURCE_ID = T_RESOURCE_.ID
+        WHERE
+        T_ROLE_RESOURCE_.ROLE_ID = #{roleId}
+        AND T_RESOURCE_.IS_DISABLE='N'
+    </select>
+</mapper>
